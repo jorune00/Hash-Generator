@@ -3,7 +3,7 @@
 
 import random
 
-def generate_even_hex_string(length=40):
+def generate_hex_string(length=40):
     hex_chars = "02468aceACE"
     return ''.join(random.choice(hex_chars) for _ in range(length))
 
@@ -16,5 +16,5 @@ if length == "":
     length = 40
 else:
     length = int(length)
-results = generate_even_hex_string(length)
+results = generate_hex_string(length)
 print(results)
