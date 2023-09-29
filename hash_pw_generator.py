@@ -92,20 +92,19 @@ def hash_password_generator():
         return results
 
     else:
-        print("\nInvalid selection. Please try again.")
-        hash_password_generator()
+        results = "Invalid selection. Please try again."
+        return results
 
 # Main program
 
-if __name__ == "__main__":
+flag = True
+
+while flag:
     results = hash_password_generator()
-    print(results)
+    if results == "Goodbye!":
+        print(f"\n{results}\n")
+        break
+    else:
+        print(f"\n{results}\n")
+        continue
     
-
-
-# length = input("Enter the length of the hash (default 40):")
-# if length == "":
-#     length = 40
-# else:
-#     length = int(length)
-# results = generate_hex_string(length)
