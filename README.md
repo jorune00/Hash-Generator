@@ -1,5 +1,3 @@
----
-
 # Hash Password or Key Generator
 
 ## Overview
@@ -60,5 +58,3 @@ This project is open-source. Feel free to modify or distribute.
 ## Author
 
 - jorune00
-
----
