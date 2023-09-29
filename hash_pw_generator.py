@@ -37,17 +37,17 @@ def hash_password_generator():
     while selection_flag:
         selection = input('''
                           
-        \nWelcome to the Hash Password Generator!
+        \nWelcome to the Hash Password or Key Generator!
 
-        Please select an option:
-        1. Generate a hash with hex characters only
-        2. Generate a hash with binary characters only
-        3. Generate a hash with alphanumeric characters
-        4. Generate a hash with alphanumeric characters and special characters
-        5. Generate a hash with alphanumeric characters, special characters, spaces, and punctuation
-        6. Exit
+    Please select an option:
+    1. Generate a hash with hex characters only
+    2. Generate a hash with binary characters only
+    3. Generate a hash with alphanumeric characters
+    4. Generate a hash with alphanumeric characters and special characters
+    5. Generate a hash with alphanumeric characters, special characters, spaces, and punctuation
+    6. Exit
 
-        Enter your choice (1-6): ''')
+    Enter your choice (1-6): ''')
         if (selection == "1" or selection == "2" or selection == "3" or selection == "4" or selection == "5"):
             selection_flag = False
         elif selection == "6":
@@ -60,11 +60,12 @@ def hash_password_generator():
 
     input_length_flag = True
     while input_length_flag:
-        length = input("Enter the length of the hash (default 40): ")
+        length = input("    Enter the length of the hash (default 40): ")
         if length == "":
             length = 40
             input_length_flag = False
-        elif length == int:
+        elif length.isdigit() and int(length) > 0:
+            length = int(length)
             input_length_flag = False
         else: 
             print("Invalid length. Please try again.")
@@ -92,18 +93,10 @@ def hash_password_generator():
         results = generate_alphanumeric_string_with_special_chars_and_spaces_and_punctuation(length)
         return results
 
-    elif selection == "6":
-        results = "Goodbye!"
-        return results
-
-    else:
-        results = "Invalid selection. Please try again."
-        return results
-
 def end_program():
     """End the program"""
 
-    print("\nGoodbye!\n")
+    print("\n<End of Line>\n")
     exit()
 
 # Main program
