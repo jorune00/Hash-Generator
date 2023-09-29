@@ -9,5 +9,12 @@ def generate_even_hex_string(length=40):
 
 # Generate a 40-character hash with even hex characters only
 
-results = generate_even_hex_string()
+print("\nGenerate a 40-character hash with even hex characters only\n" +
+      "--------------------------------------------------------")
+length = input("Enter the length of the hash (default 40):")
+if length == "":
+    length = 40
+else:
+    length = int(length)
+results = generate_even_hex_string(length)
 print(results)
