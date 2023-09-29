@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-# Password generator
+# Password or key generator
 # jorune00 -- 2023-09-29 10:26:14
 
 import random
 
 def generate_hex_string(length=40):
-    hex_chars = "02468aceACE"
+    hex_chars = "0123456789abcdefABCDEF"
     return ''.join(random.choice(hex_chars) for _ in range(length))
 
 def generate_binary_string(length=40):
@@ -29,61 +29,66 @@ def generate_alphanumeric_string_with_special_chars_and_spaces_and_punctuation(l
     return ''.join(random.choice(alphanumeric_chars) for _ in range(length))
 
 def hash_password_generator():
+    """Generate a hash password based on user input"""
 
-    selection = input('''\nWelcome to the Hash Password Generator!
+    # Validate selection input
 
-    Please select an option:
-    1. Generate a hash with hex characters only
-    2. Generate a hash with binary characters only
-    3. Generate a hash with alphanumeric characters
-    4. Generate a hash with alphanumeric characters and special characters
-    5. Generate a hash with alphanumeric characters, special characters, spaces, and punctuation
-    6. Exit
+    selection_flag = True
+    while selection_flag:
+        selection = input('''
+                          
+        \nWelcome to the Hash Password Generator!
 
-    Enter your choice (1-6): ''')
+        Please select an option:
+        1. Generate a hash with hex characters only
+        2. Generate a hash with binary characters only
+        3. Generate a hash with alphanumeric characters
+        4. Generate a hash with alphanumeric characters and special characters
+        5. Generate a hash with alphanumeric characters, special characters, spaces, and punctuation
+        6. Exit
 
-    if selection == "1":
-        length = input("Enter the length of the hash (default 40):")
+        Enter your choice (1-6): ''')
+        if (selection == "1" or selection == "2" or selection == "3" or selection == "4" or selection == "5"):
+            selection_flag = False
+        elif selection == "6":
+            end_program()
+        else:
+            print("Invalid selection. Please try again.")
+            continue
+
+    # Validate lenght input
+
+    input_length_flag = True
+    while input_length_flag:
+        length = input("Enter the length of the hash (default 40): ")
         if length == "":
             length = 40
-        else:
-            length = int(length)
+            input_length_flag = False
+        elif length == int:
+            input_length_flag = False
+        else: 
+            print("Invalid length. Please try again.")
+            continue
+
+    # Generate hash based on selection
+
+    if selection == "1":
         results = generate_hex_string(length)
         return results
 
     elif selection == "2":
-        length = input("Enter the length of the hash (default 40):")
-        if length == "":
-            length = 40
-        else:
-            length = int(length)
         results = generate_binary_string(length)
         return results
 
     elif selection == "3":
-        length = input("Enter the length of the hash (default 40):")
-        if length == "":
-            length = 40
-        else:
-            length = int(length)
         results = generate_alphanumeric_string(length)
         return results
 
     elif selection == "4":
-        length = input("Enter the length of the hash (default 40):")
-        if length == "":
-            length = 40
-        else:
-            length = int(length)
         results = generate_alphanumeric_string_with_special_chars(length)
         return results
 
     elif selection == "5":
-        length = input("Enter the length of the hash (default 40):")
-        if length == "":
-            length = 40
-        else:
-            length = int(length)
         results = generate_alphanumeric_string_with_special_chars_and_spaces_and_punctuation(length)
         return results
 
@@ -95,16 +100,16 @@ def hash_password_generator():
         results = "Invalid selection. Please try again."
         return results
 
+def end_program():
+    """End the program"""
+
+    print("\nGoodbye!\n")
+    exit()
+
 # Main program
 
-flag = True
-
-while flag:
+if __name__ == "__main__":
     results = hash_password_generator()
-    if results == "Goodbye!":
-        print(f"\n{results}\n")
-        break
-    else:
-        print(f"\n{results}\n")
-        continue
-    
+    print(f"\nYour hash is: {results}\n")
+    end_program()
+
