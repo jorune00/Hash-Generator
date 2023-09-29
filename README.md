@@ -10,6 +10,9 @@ This Python script provides a menu-driven interface for generating secure hashes
 - Special characters
 - Spaces and punctuation
 
+![Example](https://github.com/jorune00/Hash-Generator/blob/master/Screenshot_PW_Generator.png?raw=true)
+
+
 ## Requirements
 
 - Python 3.x
