@@ -1,10 +1,16 @@
 ---
 
-# Hex String Generator
+# Hash Password or Key Generator
 
-## Description
+## Overview
 
-This Python script generates a random hexadecimal string of a specified length. By default, it generates a 40-character long string.
+This Python script provides a menu-driven interface for generating secure hashes or keys based on user-defined criteria. The generated hash can contain different types of characters, including:
+
+- Hexadecimal characters
+- Binary characters
+- Alphanumeric characters
+- Special characters
+- Spaces and punctuation
 
 ## Requirements
 
@@ -12,18 +18,44 @@ This Python script generates a random hexadecimal string of a specified length. 
 
 ## How to Use
 
-1. Clone the repository.
-2. Run the script:
-    ```bash
-    python your_script_name.py
+1. Run the script in your terminal.
     ```
-3. Input the desired length for the hash when prompted. Press Enter to use the default length of 40.
+    python hash_pw_generator.py
+    ```
+2. The script will display a menu with options to generate different types of hashes.
+3. Choose the desired hash type by entering the corresponding number.
+4. Next, specify the length of the hash. Default length is 40 characters.
+5. The script will generate the hash and display it.
 
-## Code Overview
+## Functions
 
-- `generate_hex_string(length=40)`: Function to generate the hex string.
-- `length`: Variable to hold the length of the string. Default is 40.
-- `results`: Holds the generated hex string.
+### `generate_hex_string(length=40)`
+
+Generates a hash containing only hexadecimal characters.
+
+### `generate_binary_string(length=40)`
+
+Generates a hash containing only binary characters.
+
+### `generate_alphanumeric_string(length=40)`
+
+Generates a hash containing alphanumeric characters.
+
+### `generate_alphanumeric_string_with_special_chars(length=40)`
+
+Generates a hash containing alphanumeric and special characters.
+
+### `generate_alphanumeric_string_with_special_chars_and_spaces(length=40)`
+
+Generates a hash containing alphanumeric characters, special characters, and spaces.
+
+### `generate_alphanumeric_string_with_special_chars_and_spaces_and_punctuation(length=40)`
+
+Generates a hash containing alphanumeric characters, special characters, spaces, and punctuation.
+
+## License
+
+This project is open-source. Feel free to modify or distribute.
 
 ## Author
 
