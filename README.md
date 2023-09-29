@@ -15,7 +15,7 @@ This Python script generates a random hexadecimal string of a specified length. 
 1. Clone the repository.
 2. Run the script:
     ```bash
-    python your_script_name.py
+    python hash_pw_hex.py
     ```
 3. Input the desired length for the hash when prompted. Press Enter to use the default length of 40.
 
