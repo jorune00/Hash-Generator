@@ -2,7 +2,7 @@
 # Password or key generator
 # jorune00 -- 2023-09-29 10:26:14
 
-import random
+import random, sys
 
 def generate_hex_string(length=40):
     hex_chars = "0123456789abcdefABCDEF"
@@ -97,7 +97,7 @@ def end_program():
     """End the program"""
 
     print("\n<End of Line>\n")
-    exit()
+    sys.exit()
 
 # Main program
 
